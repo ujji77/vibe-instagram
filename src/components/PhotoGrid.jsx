@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export function PhotoGrid({ posts }) {
     return (
-        <div className="grid grid-cols-3 gap-0.5 pb-20">
+        <div className="grid grid-cols-3 gap-0.5 pb-32">
             <AnimatePresence mode="wait">
                 {posts.map((post, index) => (
                     <motion.div

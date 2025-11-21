@@ -1,16 +1,93 @@
-# React + Vite
+# Vibe Instagram - Themable Profile Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Instagram profile clone featuring **themable profiles** - allowing users to switch between different visual aesthetics without archiving posts.
 
-Currently, two official plugins are available:
+![Profile Preview](/.gemini/antigravity/brain/d3469423-6eb7-4a08-9dba-a72800a1702c/black_avatar_check_1763746344286.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎨 Features
 
-## React Compiler
+- **Themable Profiles**: Switch between different visual themes ("Hurry Up Tomorrow" and "Starboy")
+- **Dynamic Photo Grid**: 3-column responsive grid that updates based on selected theme
+- **Theme Selector**: Instagram-style chip with animated gradient border shimmer
+- **Story Overlay**: Auto-closing story view explaining the prototype concept
+- **Modern UI**: Clean, minimal design with smooth animations using Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Quick Start
 
-## Expanding the ESLint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+Visit `http://localhost:5173` to view the app.
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Layout.jsx           # Main layout wrapper
+│   ├── ProfileHeader.jsx    # Profile info, stats, and theme chip
+│   ├── ProfileTabs.jsx      # Visual-only tabs (Grid, Reels, Tagged)
+│   ├── PhotoGrid.jsx        # 3-column photo grid with animations
+│   ├── ThemeModal.jsx       # Theme selection modal
+│   └── StoryOverlay.jsx     # Fullscreen story view
+├── assets/
+│   └── Photos/
+│       └── Weeknd/
+│           ├── Hurry Up Tomorrow/  # 9 images
+│           └── Starboy/            # 9 images
+├── data.js                  # Profile and theme data
+├── App.jsx                  # Main app component
+└── index.css                # Global styles + animations
+```
+
+## 🎯 Key Concepts
+
+### Themable Profiles
+This prototype explores a feature concept where Instagram users (particularly brands and artists) can create multiple "themes" for their profile. Each theme contains:
+- A unique set of photos
+- A custom label (e.g., "Hurry Up Tomorrow", "Starboy")
+- Seamless switching without archiving content
+
+### Current Profile
+- **Name**: Abel
+- **Username**: @theweeknd
+- **Bio**: [theweeknd.com/tour](https://theweeknd.com/tour)
+- **Themes**: 2 (Hurry Up Tomorrow, Starboy)
+- **Total Posts**: 18 images
+
+## 🛠️ Tech Stack
+
+- **React** - UI framework
+- **Vite** - Build tool and dev server
+- **Tailwind CSS v4** - Styling
+- **Framer Motion** - Animations
+- **Lucide React** - Icons
+
+## 🎨 Custom Animations
+
+- **Instagram Gradient Shimmer**: Periodic border animation on theme chip
+- **Grid Transitions**: Smooth fade/scale animations when switching themes
+- **Story Timer**: 5-second auto-close with progress bar
+
+## 📝 Notes
+
+- This is a **frontend-only prototype** with no backend
+- Images are stored locally in `/src/assets/Photos/Weeknd/`
+- Profile data is defined in `src/data.js`
+- The "Follow" and "Message" buttons are non-functional (UI only)
+
+## 🎭 Design Challenge
+
+Created as part of the **Vibe Design Challenge** by Crescent Creatives - exploring innovative Instagram features for enhanced creative expression.
+
+---
+
+Built with ❤️ using React + Vite + Tailwind CSS
