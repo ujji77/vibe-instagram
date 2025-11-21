@@ -88,6 +88,14 @@ This prototype explores a feature concept where Instagram users (particularly br
 
 Created as part of the **Vibe Design Challenge** by Crescent Creatives - exploring innovative Instagram features for enhanced creative expression.
 
+## 🤖 Built With AI
+
+This entire project was **vibe coded** using [Google Antigravity](https://deepmind.google/technologies/gemini/antigravity/) - an AI-powered coding assistant that helped bring this concept to life through natural conversation and iterative development.
+
+## 📄 License
+
+MIT License - feel free to use this project for learning, inspiration, or as a foundation for your own work.
+
 ---
 
 Built with ❤️ using React + Vite + Tailwind CSS
