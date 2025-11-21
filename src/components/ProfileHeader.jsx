@@ -1,17 +1,19 @@
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 export function ProfileHeader({ account, currentTheme, onOpenThemeModal }) {
     return (
         <div className="px-6 pt-8 pb-6">
             <div className="flex justify-between items-center mb-6">
                 <div className="w-20 h-20 rounded-full p-[2px] bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600">
-                    <div className="w-full h-full rounded-full border-2 border-white overflow-hidden">
-                        <img
-                            src={account.avatar}
-                            alt={account.username}
-                            className="w-full h-full object-cover"
-                        />
+                    <div className="w-full h-full rounded-full border-2 border-white overflow-hidden bg-black">
+                        {account.avatar && (
+                            <img
+                                src={account.avatar}
+                                alt={account.username}
+                                className="w-full h-full object-cover"
+                            />
+                        )}
                     </div>
                 </div>
                 <div className="flex gap-6 text-center">
@@ -59,8 +61,17 @@ export function ProfileHeader({ account, currentTheme, onOpenThemeModal }) {
                         />
                     </button>
                 </div>
-                <div className="text-sm text-neutral-600 whitespace-pre-line mb-3 leading-relaxed">
-                    {account.bio}
+                <div className="text-sm text-neutral-600 mb-3 leading-relaxed">
+                    <a
+                        href={`https://${account.bio}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <ExternalLink size={14} />
+                        {account.bio}
+                    </a>
                 </div>
             </div>
 

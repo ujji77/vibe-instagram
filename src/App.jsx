@@ -3,30 +3,24 @@ import { Layout } from './components/Layout';
 import { ProfileHeader } from './components/ProfileHeader';
 import { ProfileTabs } from './components/ProfileTabs';
 import { PhotoGrid } from './components/PhotoGrid';
-import { AccountSwitcher } from './components/AccountSwitcher';
 import { StoryOverlay } from './components/StoryOverlay';
 import { ThemeModal } from './components/ThemeModal';
 import { DATA } from './data';
 
 function App() {
-  const [currentAccountId, setCurrentAccountId] = useState('fashionBrand');
   const [currentThemeId, setCurrentThemeId] = useState(null);
   const [isStoryOpen, setIsStoryOpen] = useState(false);
   const [isThemeModalOpen, setIsThemeModalOpen] = useState(false);
 
-  const currentAccount = DATA[currentAccountId];
+  const currentAccount = DATA.theweeknd;
 
-  // Reset theme when account changes or initialize if null
+  // Initialize theme
   useEffect(() => {
     const themeIds = Object.keys(currentAccount.themes);
     if (!currentThemeId || !themeIds.includes(currentThemeId)) {
       setCurrentThemeId(themeIds[0]);
     }
-  }, [currentAccountId, currentAccount, currentThemeId]);
-
-  const handleSwitchAccount = () => {
-    setCurrentAccountId(prev => prev === 'fashionBrand' ? 'musicArtist' : 'fashionBrand');
-  };
+  }, [currentAccount, currentThemeId]);
 
   // Safe access to current theme data
   const currentTheme = currentAccount.themes[currentThemeId] || Object.values(currentAccount.themes)[0];
@@ -44,11 +38,6 @@ function App() {
       <ProfileTabs />
 
       <PhotoGrid posts={currentTheme?.posts || []} />
-
-      <AccountSwitcher
-        currentAccountId={currentAccountId}
-        onSwitch={handleSwitchAccount}
-      />
 
       <StoryOverlay
         isOpen={isStoryOpen}
