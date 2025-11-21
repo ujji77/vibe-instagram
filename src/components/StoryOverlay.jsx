@@ -60,10 +60,10 @@ export function StoryOverlay({ isOpen, onClose }) {
                                 <span className="font-bold text-yellow-300">Themable Profiles</span>
                             </p>
                             <p className="text-sm opacity-90">
-                                Allowing brands and artists to switch their entire grid aesthetic without archiving posts.
+                                Allowing brands and artists to switch their entire grid aesthetic without needing to archive all posts.
                             </p>
                             <div className="mt-12 text-xs opacity-75 uppercase tracking-widest">
-                                Crescent Creatives • 7 Day Challenge
+                                Crescent Creatives • 7 Day Vibe Design Challenge
                             </div>
                         </div>
                     </div>
